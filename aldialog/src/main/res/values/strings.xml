@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ALDialog</string>
+    <string name="weChat">微信</string>
+    <string name="qq">QQ</string>
+    <string name="weChatFriends">朋友圈</string>
+    <string name="qzone">QQ空间</string>
+    <string name="sina">微博</string>
+</resources>

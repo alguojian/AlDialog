@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="HomeDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>    <!--是否浮在界面上-->
+        <item name="android:windowIsTranslucent">false</item> <!--是否半透明-->
+        <item name="android:windowNoTitle">true</item>       <!--是否去除标题-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--窗口背景色透明-->
+        <item name="android:backgroundDimEnabled">true</item> <!--背景是否模糊显示-->
+    </style>
+
+
+    <!--自定义dialog弹窗theme-->
+    <style name="LoadingDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item><!--没有标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--窗口背景色透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮在界面上-->
+        <item name="android:backgroundDimEnabled">false</item><!--背景是否模糊显示-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <!--popWindow动画-->
+    <style name="popWindow">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+</resources>

@@ -1,0 +1,15 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- android:radius为角的弧度，值越大角越圆 -->
+    <corners android:radius="10dp" />
+
+    <!-- solid:实心 ,就是填充的意思 指定填充的颜色 -->
+    <solid android:color="#555" />
+
+    <!-- 线条 描边   定义边框线的宽度和颜色 android:dashWidth="10dp"
+    每条虚线的宽度 android:dashGap="5dp"两条虚线之间的间距 -->
+    <!--<stroke-->
+        <!--android:width="0.5dp"-->
+        <!--android:color="#e8e8e8" />-->
+
+</shape>
