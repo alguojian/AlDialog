@@ -13,8 +13,8 @@ import com.alguojian.aldialog.R;
 public class LoadingDialog extends BaseDialog {
 
     private static final int ONE = 1;
-    private boolean flag;
-    private boolean arr;
+    private boolean flag=true;
+    private boolean arr=true;
     private int mPosition = 1;
 
     public LoadingDialog(@NonNull Context context, int position) {

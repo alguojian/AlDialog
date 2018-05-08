@@ -2,16 +2,19 @@ package com.alguojian.example;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.alguojian.aldialog.adapter.ShareAdapter;
+import com.alguojian.aldialog.dialog.FailDialog;
+import com.alguojian.aldialog.dialog.InfoDialog;
 import com.alguojian.aldialog.dialog.LoadingDialog;
 import com.alguojian.aldialog.dialog.ShareDialog;
 import com.alguojian.aldialog.dialog.ShowDialog;
+import com.alguojian.aldialog.dialog.SuccessDialog;
 import com.alguojian.aldialog.dialog.UpDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button button3;
     protected Button button4;
     protected Button button5;
+    protected Button button6;
+    protected Button button7;
+    protected Button button8;
     private Context context;
 
     @Override
@@ -42,6 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button4.setOnClickListener(MainActivity.this);
         button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(MainActivity.this);
+        button6 = (Button) findViewById(R.id.button6);
+        button6.setOnClickListener(MainActivity.this);
+        button7 = (Button) findViewById(R.id.button7);
+        button7.setOnClickListener(MainActivity.this);
+        button8 = (Button) findViewById(R.id.button8);
+        button8.setOnClickListener(MainActivity.this);
     }
 
     @Override
@@ -97,8 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (view.getId() == R.id.button3) {
 
-            new LoadingDialog(this, 1)
-                    .setDissmissByOutside(true).setDissmissByBack(true).show();
+            new LoadingDialog(this, 1).show();
 
         } else if (view.getId() == R.id.button4) {
 
@@ -107,9 +118,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (view.getId() == R.id.button5) {
 
-            new LoadingDialog(this, 2)
-                    .setDissmissByOutside(false).setDissmissByBack(false).show();
+            new LoadingDialog(this, 2).show();
 
+        } else if (view.getId() == R.id.button6) {
+
+            new SuccessDialog(this, "提交成功").show();
+
+        } else if (view.getId() == R.id.button7) {
+
+            new InfoDialog(this, "提交失败").show();
+        } else if (view.getId() == R.id.button8) {
+
+            new FailDialog(this, "提交中...").show();
         }
     }
 

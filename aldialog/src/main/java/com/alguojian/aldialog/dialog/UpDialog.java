@@ -53,7 +53,7 @@ public class UpDialog extends BaseDialog {
 
     @Override
     public int getLayout() {
-        return R.layout.loading_dialog;
+        return R.layout.loading2_dialog;
     }
 
 }

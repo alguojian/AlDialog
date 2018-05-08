@@ -6,12 +6,12 @@
     <shape
         android:innerRadiusRatio="3"
         android:shape="ring"
-        android:thicknessRatio="10"
+        android:thicknessRatio="15"
         android:useLevel="false" >
         <gradient
             android:centerColor="#FFFFFF"
             android:centerY="0.50"
-            android:endColor="#555555"
+            android:endColor="#666666"
             android:startColor="#ffffff"
             android:type="sweep"
             android:useLevel="false" />
