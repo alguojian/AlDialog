@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.button8) {
 
             new FailDialog(this, "提交中...").show();
+
         }
     }
 
