@@ -13,8 +13,8 @@ import com.alguojian.aldialog.R;
 public class LoadingDialog extends BaseDialog {
 
     private static final int ONE = 1;
-    private boolean flag=true;
-    private boolean arr=true;
+    private boolean flag = true;
+    private boolean arr = true;
     private int mPosition = 1;
 
     public LoadingDialog(@NonNull Context context, int position) {
@@ -63,11 +63,7 @@ public class LoadingDialog extends BaseDialog {
 
     @Override
     public int getLayout() {
-        if (ONE == mPosition) {
-
-            return R.layout.loading_dialog;
-        }
-
-        return R.layout.loading2_dialog;
+        //1是默认圆环，2是菊花
+        return ONE == mPosition ? R.layout.loading_dialog : R.layout.loading2_dialog;
     }
 }
