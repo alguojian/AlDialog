@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button button6;
     protected Button button7;
     protected Button button8;
+    protected Button button10;
+    protected Button button11;
     private Context context;
 
     @Override
@@ -54,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button7.setOnClickListener(MainActivity.this);
         button8 = (Button) findViewById(R.id.button8);
         button8.setOnClickListener(MainActivity.this);
+        button10 = (Button) findViewById(R.id.button10);
+        button10.setOnClickListener(MainActivity.this);
+        button11 = (Button) findViewById(R.id.button11);
+        button11.setOnClickListener(MainActivity.this);
     }
 
     @Override
@@ -130,6 +136,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (view.getId() == R.id.button8) {
 
             new FailDialog(this, "提交中...").show();
+
+        } else if (view.getId() == R.id.button10) {
+
+            new LoadingDialog(this, 1
+                    , true).show();
+
+        } else if (view.getId() == R.id.button11) {
+
+            new LoadingDialog(this, 2
+                    , true).show();
 
         }
     }

@@ -63,11 +63,11 @@ public abstract class BaseDialog extends Dialog {
      */
     public void setButtomAndWidth() {
 
-        getWindow().setGravity(Gravity.BOTTOM); //显示在底部
+        getWindow().setGravity(Gravity.BOTTOM);
         WindowManager m = getWindow().getWindowManager();
         Display d = m.getDefaultDisplay();
         WindowManager.LayoutParams p = getWindow().getAttributes();
-        p.width = d.getWidth(); //设置dialog的宽度为当前手机屏幕的宽度
+        p.width = d.getWidth();
         getWindow().setAttributes(p);
         getWindow().setWindowAnimations(R.style.popWindow);
 
