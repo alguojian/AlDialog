@@ -18,7 +18,7 @@ allprojects {
 ```
 	dependencies {
 	
-	     compile 'com.github.ALguojian:AlDialog:1.0'
+	     compile 'com.github.ALguojian:AlDialog:6.2'
 	}
 
 ```
