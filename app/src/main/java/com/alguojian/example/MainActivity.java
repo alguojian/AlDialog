@@ -15,6 +15,7 @@ import com.alguojian.aldialog.dialog.LoadingDialog;
 import com.alguojian.aldialog.dialog.ShareDialog;
 import com.alguojian.aldialog.dialog.ShowDialog;
 import com.alguojian.aldialog.dialog.SuccessDialog;
+import com.alguojian.aldialog.dialog.TakePhotoDialog;
 import com.alguojian.aldialog.dialog.UpDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected Button button8;
     protected Button button10;
     protected Button button11;
+    protected Button button9;
     private Context context;
 
     @Override
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button10.setOnClickListener(MainActivity.this);
         button11 = (Button) findViewById(R.id.button11);
         button11.setOnClickListener(MainActivity.this);
+        button9 = (Button) findViewById(R.id.button9);
+        button9.setOnClickListener(MainActivity.this);
     }
 
     @Override
@@ -146,7 +150,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             new LoadingDialog(this, 2
                     , true).show();
+        } else if (view.getId() == R.id.button9) {
 
+            new TakePhotoDialog(this)
+                    .setOnTakePhotoListener(new TakePhotoDialog.TakePhoto() {
+                        @Override
+                        public void takePhoto() {
+                            System.out.println("------点击拍照");
+                        }
+
+                        @Override
+                        public void searchPhoto() {
+                            System.out.println("-------d打开相册");
+                        }
+                    }).show();
         }
     }
 

@@ -86,15 +86,12 @@ public class ShareDialog extends BaseDialog {
 
         gridView.setAdapter(new ShareAdapter(context, list));
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        gridView.setOnItemClickListener((adapterView, view, i, l) -> {
 
-                if (onItemClick != null) {
-                    onItemClick.onItemClick(i);
-                }
-
+            if (onItemClick != null) {
+                onItemClick.onItemClick(i);
             }
+
         });
     }
 
