@@ -3,7 +3,6 @@ package com.alguojian.aldialog.dialog;
 import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.view.View;
 import android.widget.TextView;
 
 import com.alguojian.aldialog.R;
@@ -31,12 +30,9 @@ public class SuccessDialog extends BaseDialog {
         TextView viewById = findViewById(R.id.textView);
         viewById.setText(mString);
 
-        sHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                dismiss();
-            }
-        }, 3000);
+        sHandler.postDelayed(() -> dismiss(), 3000);
+
+        setCenter();
     }
 
     @Override

@@ -17,7 +17,7 @@
             android:layout_gravity="center"
             android:layout_margin="15dp"
             android:gravity="center"
-            android:textSize="16dp" />
+            android:textSize="18dp" />
 
         <TextView
             android:paddingLeft="18dp"
@@ -48,7 +48,7 @@
                 android:background="@null"
                 android:gravity="center"
                 android:singleLine="true"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
 
             <View
                 android:layout_width="1px"
@@ -64,7 +64,7 @@
                 android:background="@null"
                 android:gravity="center"
                 android:singleLine="true"
-                android:textSize="14dp" />
+                android:textSize="16dp" />
         </LinearLayout>
     </LinearLayout>
 

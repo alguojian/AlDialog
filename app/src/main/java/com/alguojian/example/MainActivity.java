@@ -94,12 +94,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (view.getId() == R.id.button2) {
 
-            new ShareDialog(this)
-                    .setDissmissByOutside(false)
-                    .setDissmissByBack(true)
-                    .setOnItemClick(new ShareDialog.onItemClick() {
+          new ShareDialog(MainActivity.this)
+
+                    .setOnListItemClick(new ShareDialog.OnListItemClick() {
                         @Override
-                        public void onItemClick(int position) {
+                        public void onListItemClick(int position) {
 
                             switch (position) {
 
@@ -114,8 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     break;
                             }
                         }
-                    })
-                    .show();
+                    }).show();
 
         } else if (view.getId() == R.id.button3) {
 
@@ -152,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     , true).show();
         } else if (view.getId() == R.id.button9) {
 
-            new TakePhotoDialog(this)
+            TakePhotoDialog takePhotoDialog = new TakePhotoDialog(this)
                     .setOnTakePhotoListener(new TakePhotoDialog.TakePhoto() {
                         @Override
                         public void takePhoto() {
@@ -163,7 +161,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         public void searchPhoto() {
                             System.out.println("-------d打开相册");
                         }
-                    }).show();
+                    });
+            takePhotoDialog.setNoScroll(takePhotoDialog);
+            takePhotoDialog.show();
+
         }
     }
 

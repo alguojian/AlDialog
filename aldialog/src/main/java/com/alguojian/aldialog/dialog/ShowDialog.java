@@ -2,7 +2,11 @@ package com.alguojian.aldialog.dialog;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -113,25 +117,21 @@ public class ShowDialog extends BaseDialog {
         }
 
         //设置确定按钮被点击后，向外界提供监听
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (yesOnclickListener != null) {
-                    yesOnclickListener.onYesClick();
-                    dismiss();
-                }
+        yes.setOnClickListener(v -> {
+            if (yesOnclickListener != null) {
+                yesOnclickListener.onYesClick();
+                dismiss();
             }
         });
         //设置取消按钮被点击后，向外界提供监听
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (noOnclickListener != null) {
-                    noOnclickListener.onNoClick();
-                    dismiss();
-                }
+        no.setOnClickListener(v -> {
+            if (noOnclickListener != null) {
+                noOnclickListener.onNoClick();
+                dismiss();
             }
         });
+
+        setCenter();
     }
 
     /**

@@ -2,10 +2,7 @@ package com.alguojian.aldialog.dialog;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
-
 
 import com.alguojian.aldialog.R;
 import com.alguojian.aldialog.adapter.ShareAdapter;
@@ -16,48 +13,22 @@ import java.util.ArrayList;
  * Created by Hello on 2017/9/27.
  */
 
-public class ShareDialog extends BaseDialog {
+public class ShareDialog extends BaseBottomDialog {
 
     protected GridView gridView;
-    private boolean flag;
-    private boolean arr;
     private ArrayList<String> list;
-    private Context context;
 
-    private onItemClick onItemClick;
+    private OnListItemClick onItemClick;
 
     public ShareDialog(@NonNull Context context) {
-        super(context, R.style.HomeDialog);
-        this.context = context;
+        super(context);
+        setCancelable(true);
+        setCanceledOnTouchOutside(false);
     }
 
-    public ShareDialog setOnItemClick(onItemClick onItemClick) {
+    public ShareDialog setOnListItemClick(OnListItemClick onItemClick) {
 
         this.onItemClick = onItemClick;
-        return this;
-    }
-
-    /**
-     * 返回键消失
-     *
-     * @param flag
-     * @return
-     */
-    public ShareDialog setDissmissByBack(boolean flag) {
-
-        this.flag = flag;
-        return this;
-    }
-
-    /**
-     * 空白处消失
-     *
-     * @param arr
-     * @return
-     */
-    public ShareDialog setDissmissByOutside(boolean arr) {
-
-        this.arr = arr;
         return this;
     }
 
@@ -70,33 +41,31 @@ public class ShareDialog extends BaseDialog {
     public void initView() {
 
         gridView = findViewById(R.id.gridView);
-        setButtomAndWidth();
-        sssssssss(flag, arr);
     }
 
     @Override
     public void initData() {
 
         list = new ArrayList<>();
-        list.add(context.getString(R.string.weChat));
-        list.add(context.getString(R.string.qq));
-        list.add(context.getString(R.string.weChatFriends));
-        list.add(context.getString(R.string.qzone));
-        list.add(context.getString(R.string.sina));
+        list.add(mContext.getString(R.string.weChat));
+        list.add(mContext.getString(R.string.qq));
+        list.add(mContext.getString(R.string.weChatFriends));
+        list.add(mContext.getString(R.string.qzone));
+        list.add(mContext.getString(R.string.sina));
 
-        gridView.setAdapter(new ShareAdapter(context, list));
+        gridView.setAdapter(new ShareAdapter(mContext, list));
 
         gridView.setOnItemClickListener((adapterView, view, i, l) -> {
 
             if (onItemClick != null) {
-                onItemClick.onItemClick(i);
+                onItemClick.onListItemClick(i);
             }
 
         });
     }
 
-    public interface onItemClick {
-        void onItemClick(int position);
+    public interface OnListItemClick {
+        void onListItemClick(int position);
     }
 
 }

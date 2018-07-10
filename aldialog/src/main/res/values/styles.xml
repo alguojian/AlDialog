@@ -29,4 +29,26 @@
         <!-- 指定消失的动画xml -->
     </style>
 
+
+    <!--没有阴影的dialog主题-->
+    <style name="noWindowBottomSheetDialog" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item><!--没有标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--窗口背景色透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮在界面上-->
+        <item name="android:backgroundDimEnabled">false</item><!--背景是否模糊显示-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+
+    </style>
+
+
+
+    <style name="common_DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
 </resources>

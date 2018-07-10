@@ -30,12 +30,8 @@ public class FailDialog extends BaseDialog {
         TextView viewById = findViewById(R.id.textView);
         viewById.setText(mString);
 
-        sHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                dismiss();
-            }
-        }, 3000);
+        sHandler.postDelayed(() -> dismiss(), 3000);
+        setCenter();
     }
     @Override
     public void initData() {
