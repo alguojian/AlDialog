@@ -1,18 +1,10 @@
 package com.alguojian.aldialog.dialog;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
-import android.util.DisplayMetrics;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.alguojian.aldialog.R;
 
@@ -24,8 +16,6 @@ import com.alguojian.aldialog.R;
 public class LoadingDialog extends BaseDialog {
 
     private static final int ONE = 1;
-    private boolean flag = true;
-    private boolean arr = true;
     private int mPosition = 1;
     private Context mContext;
 
@@ -38,21 +28,26 @@ public class LoadingDialog extends BaseDialog {
 
         super(context, R.style.LoadingDialog);
         this.mPosition = position;
-        this.mContext=context;
+        this.mContext = context;
+    }
+
+    @Override
+    public void initView() {
+
     }
 
     public LoadingDialog(@NonNull Context context, int position, boolean flag) {
         super(context, R.style.LoadingDialog);
         this.mPosition = position;
         this.mBoolean = flag;
-        this.mContext=context;
+        this.mContext = context;
     }
 
     @Override
     public void show() {
         super.show();
 
-        if (mBoolean){
+        if (mBoolean) {
             Window window = this.getWindow();
 
             //设置窗口的属性，以便设设置
@@ -67,37 +62,6 @@ public class LoadingDialog extends BaseDialog {
             layoutParams.height = size.y;
             window.setAttributes(layoutParams);
         }
-    }
-
-    /**
-     * 返回键消失
-     *
-     * @param flag
-     * @return
-     */
-    public LoadingDialog setDissmissByBack(boolean flag) {
-
-        this.flag = flag;
-        return this;
-    }
-
-    /**
-     * 空白处消失
-     *
-     * @param arr
-     * @return
-     */
-    public LoadingDialog setDissmissByOutside(boolean arr) {
-
-        this.arr = arr;
-        return this;
-    }
-
-
-    @Override
-    public void initView() {
-        sssssssss(flag, arr);
-
     }
 
     @Override

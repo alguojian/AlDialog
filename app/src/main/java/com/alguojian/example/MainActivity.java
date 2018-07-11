@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         context = MainActivity.this;
         initView();
     }
@@ -71,8 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.button1) {
 
             new ShowDialog(this)
-                    .setDissmissByBack(false)
-                    .setDissmissByOutside(false)
                     .setMessage("快快来快快来访问我吧快快来访问我吧快快来访问我吧访问我吧", Color.BLACK)
                     .setTitle("提示", Color.parseColor("#57caa1"))
                     .setYesColor("确定", Color.parseColor("#57caa1"))
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else if (view.getId() == R.id.button2) {
 
-          new ShareDialog(MainActivity.this)
+            new ShareDialog(MainActivity.this)
 
                     .setOnListItemClick(new ShareDialog.OnListItemClick() {
                         @Override
@@ -162,7 +160,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             System.out.println("-------d打开相册");
                         }
                     });
-            takePhotoDialog.setNoScroll(takePhotoDialog);
             takePhotoDialog.show();
 
         }

@@ -21,7 +21,7 @@
 
 
     <!--popWindow动画-->
-    <style name="popWindow">
+    <style name="bottom_dialog_popWindow">
         <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
         <!-- 指定显示的动画xml -->
 
@@ -49,6 +49,22 @@
     <style name="common_DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
+
+
+
+    <style name="common_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否启用标题栏 -->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 </resources>

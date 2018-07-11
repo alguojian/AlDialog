@@ -29,8 +29,7 @@ public class ShowDialog extends BaseDialog {
     private int yesColor;//从外界设置的title文本
     private int cancleColor;//从外界设置的title文本
     private String messageStr;//从外界设置的消息文本
-    private boolean flag;
-    private boolean arr;
+
     //确定文本和取消文本的显示内容
     private String yesStr, noStr;
     private Context context;
@@ -41,31 +40,6 @@ public class ShowDialog extends BaseDialog {
     public ShowDialog(@NonNull Context context) {
         super(context, R.style.HomeDialog);
         this.context = context;
-    }
-
-    /**
-     * 返回键消失
-     *
-     * @param flag
-     * @return
-     */
-    public ShowDialog setDissmissByBack(boolean flag) {
-
-        this.flag = flag;
-        return this;
-    }
-
-
-    /**
-     * 空白处消失
-     *
-     * @param arr
-     * @return
-     */
-    public ShowDialog setDissmissByOutside(boolean arr) {
-
-        this.arr = arr;
-        return this;
     }
 
     /**
@@ -144,7 +118,6 @@ public class ShowDialog extends BaseDialog {
         no = findViewById(R.id.no);
         titleTv = findViewById(R.id.title);
         messageTv = findViewById(R.id.message);
-        sssssssss(flag, arr);
     }
 
     /**

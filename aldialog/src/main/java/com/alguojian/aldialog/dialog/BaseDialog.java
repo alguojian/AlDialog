@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -22,16 +21,10 @@ public abstract class BaseDialog extends Dialog {
 
     public BaseDialog(@NonNull Context context, int style) {
         super(context, style);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(getLayout());
         initView();
         initData();
     }
-
 
     /**
      * 初始化数据
@@ -50,40 +43,23 @@ public abstract class BaseDialog extends Dialog {
     public abstract int getLayout();
 
     /**
-     * 设置返回键，和dialog焦点外点击事件
-     * @param flag
-     * @param arr
-     */
-    public void sssssssss(boolean flag, boolean arr) {
-
-        setCancelable(flag);
-        setCanceledOnTouchOutside(arr);
-
-    }
-
-    /**
-     * 设置宽度全屏，并从下面弹出，添加动画
-     */
-    public void setBottomAndWidth() {
-
-        DisplayMetrics dm = new DisplayMetrics();
-        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
-        wm.getDefaultDisplay().getMetrics(dm);
-        Window w = getWindow();
-        w.setWindowAnimations(R.style.popWindow);
-        w.setGravity(Gravity.BOTTOM);
-        ViewGroup.LayoutParams lay = getWindow().getAttributes();
-        lay.width = dm.widthPixels;
-    }
-
-    /**
      * 设置宽度全屏，并从下面弹出，添加动画
      */
     public void setCenter() {
         Window w = getWindow();
         w.setWindowAnimations(R.style.common_DialogAnimation);
         w.setGravity(Gravity.CENTER);
+    }
 
+    public void setBottomDialog() {
+        DisplayMetrics dm = new DisplayMetrics();
+        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
+        wm.getDefaultDisplay().getMetrics(dm);
+        Window w = getWindow();
+        w.setWindowAnimations(R.style.bottom_dialog_popWindow);
+        w.setGravity(Gravity.BOTTOM);
+        ViewGroup.LayoutParams lay = getWindow().getAttributes();
+        lay.width = dm.widthPixels;
     }
 
 
