@@ -1,5 +1,9 @@
 # DialogHelper
 
+最新版本如下：
+
+[![](https://jitpack.io/v/ALguojian/AlDialog.svg)](https://jitpack.io/#ALguojian/AlDialog)
+
 ![](http://ouvjn19yd.bkt.clouddn.com/DialogHelper.gif)
 
 1.Add it in your root build.gradle at the end of repositories:
