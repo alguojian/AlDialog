@@ -21,6 +21,12 @@ public abstract class BaseDialog extends Dialog {
 
     public BaseDialog(@NonNull Context context, int style) {
         super(context, style);
+
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(getLayout());
         initView();
         initData();

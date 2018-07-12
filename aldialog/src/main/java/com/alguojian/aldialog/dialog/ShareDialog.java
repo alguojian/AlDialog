@@ -21,7 +21,7 @@ public class ShareDialog extends BaseBottomDialog {
     private OnListItemClick onItemClick;
 
     public ShareDialog(@NonNull Context context) {
-        super(context);
+        super(context,R.style.noWindowBottomSheetDialog);
         setCancelable(true);
         setCanceledOnTouchOutside(false);
     }

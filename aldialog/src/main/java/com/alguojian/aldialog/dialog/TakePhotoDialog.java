@@ -16,7 +16,7 @@ public class TakePhotoDialog extends BaseBottomDialog {
     private TakePhoto mTakePhoto;
 
     public TakePhotoDialog(@NonNull Context context) {
-        super(context);
+        super(context,R.style.noWindowBottomSheetDialog);
         setCancelable(true);
         setCanceledOnTouchOutside(false);
     }

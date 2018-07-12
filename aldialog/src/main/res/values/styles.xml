@@ -36,10 +36,10 @@
         <item name="android:windowNoTitle">true</item><!--没有标题-->
         <item name="android:windowBackground">@android:color/transparent</item><!--窗口背景色透明-->
         <item name="android:windowIsFloating">true</item><!--是否浮在界面上-->
-        <item name="android:backgroundDimEnabled">false</item><!--背景是否模糊显示-->
+        <!--<item name="android:backgroundDimEnabled">false</item>&lt;!&ndash;背景是否模糊显示&ndash;&gt;-->
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:background">@android:color/transparent</item>
+        <!--<item name="android:background">@android:color/transparent</item>-->
         <item name="android:colorBackground">@android:color/transparent</item>
 
     </style>
